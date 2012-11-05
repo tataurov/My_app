@@ -9,6 +9,12 @@
   <b>Email:</b>
   <%= @user.email %>
 </p>
+<p>
+  <b>Messages:</b>
+  <%= @user.microposts.each do |micropost|%>
+    <%= micropost.id %>
+  <%end%>
+</p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
