@@ -4,10 +4,17 @@
       %a{:href => '/'} Home
   %li
     .button
-      %a{:href => '/users'} Users
+      %a{:href => '/users'}
+        Users
+      - if @users.present?
+        %small
+          = @users.count
   %li
     .button
       %a{:href => '/microposts'} microposts
+      - if @microposts.present?
+        %small
+          = @microposts.count
   %li
     .button
       %a{:href => '/pages/home'} pages
