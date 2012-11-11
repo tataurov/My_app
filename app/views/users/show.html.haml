@@ -1,0 +1,32 @@
+#notice
+  User id:
+  %span.fs15.red
+    = @user.id
+
+%p
+  %b Name:
+  = @user.name
+
+
+%p
+  %b Email:
+  = @user.email
+
+%p
+  %b Messages:
+  - if @user.microposts.present?
+    - @user.microposts.each do |micropost|
+      .red.fs15
+        Message id:
+        = micropost.id
+      %div
+        Content:
+      .br-1-gray.p5.br2
+        .p.fs13
+          = micropost.content
+  - else
+    %b.red No messages
+
+
+= link_to 'Edit', edit_user_path(@user)
+= link_to 'Back', users_path

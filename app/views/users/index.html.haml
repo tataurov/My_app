@@ -1,5 +1,7 @@
-%h1 Users:
+- content_for(:page_header) do
+  Users page
 
+%h2 Users list:
 %table
   %tr
     %th Name
@@ -8,7 +10,7 @@
     %th
     %th
 
-= @users.each do |user|
+- @users.each do |user|
   %tr
     %td= user.name
     %td= user.email
