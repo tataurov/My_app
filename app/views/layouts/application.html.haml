@@ -8,8 +8,11 @@
     = csrf_meta_tag
   %body
     #wrapper
-      %h1
-        = yield(:page_header)
-
+      - if content_for?(:page_header)
+        %h1
+          = yield(:page_header)
+      - else
+        %h1
+          &nbsp;
       = render(:partial => 'shared/top_nav')
       = yield

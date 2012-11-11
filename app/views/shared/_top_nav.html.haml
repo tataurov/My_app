@@ -1,20 +1,20 @@
 %ul#top-nav
   %li
     .button
-      %a{:href => '/'} Home
+      %a{:href => '/', :title => "Home"} Home
   %li
     .button
-      %a{:href => '/users'}
+      %a{:href => '/users', :title => "Users"}
         Users
       - if @users.present?
         %small
           = @users.count
   %li
     .button
-      %a{:href => '/microposts'} microposts
+      %a{:href => '/microposts', :title => "microposts"} microposts
       - if @microposts.present?
         %small
           = @microposts.count
   %li
     .button
-      %a{:href => '/pages/home'} pages
+      %a{:href => '/pages/home', :title => "pages"} pages
